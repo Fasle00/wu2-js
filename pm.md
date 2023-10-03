@@ -7,13 +7,16 @@ Fabian Sigfridsson
 
 Här beskriver du kortfattat vad du har arbetat med.
 
-Jag har arbetat med variabler, arrayer och object, kontrollstrukturer och DOM event och manipulation.
+Jag har arbetat med Javascript.
+Jag har fokuserat på variabler, arrayer och object, kontrollstrukturer och DOM event och manipulation.
+Jag har också använt setInterval.
 
 ## Hur
 
 Här beskriver du hur du har arbetat med projektet. Vilka verktyg och metoder har du använt.
 
 Jag har använt mig av Javascript och jag har egentligen bara skrivit kod som visar att jag fårstår hur man använder JavaScript.
+Jag har använt mig av setInterval för att snurra på enskiljda p-element.
 
 ## Positiva erfarenheter
 
@@ -26,3 +29,5 @@ Det har gått jättebra att skriva koden och jag har inte behövt kolla upp någ
 Här beskriver du det som du anser har gått mindre bra med ditt projekt och analyserar hur du kan undvika detta i framtida projekt.
 
 Jag har svårt med att vara kreativ så det är svårt att bara komma på saker att lägga till för att visa på bättre förståelse. Det kan jag undvika genom att kolla upp andras sidor och prodject för att få mer inspiration.
+
+Jag hade svårt med setInterval för jag förstod inte hur det funkade med att skriva in funktionen. Det kommer jag att lösa genom att experimentera mer med setInterval och jag kan undvika samma problem i framtiden också genom att söka upp det på web3shools.
