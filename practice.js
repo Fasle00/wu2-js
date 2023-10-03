@@ -10,7 +10,7 @@ export function setupPractice (element) {
   operators(element)
   controlStructures(element)
   arraysAndObjects(element)
-  domAndEvents(element)
+  // domAndEvents(element)
   domManipulation(element)
 }
 
@@ -62,32 +62,48 @@ function domAndEvents (element) {
   // kod för att visa vad du lärt dig om DOM och events
   // använd med html och listeners
   console.log(element, 'lyssna efter event för att ändra element')
+  let ul = document.createElement('ul')
   let clickCount = 0
+
   element.addEventListener('click', () => {
+    let li = document.createElement('li')
     let p = document.createElement('p')
-    p.textContent = `du har klickat ${++clickCount} gånger`
-    domManipulation(p)
-    element.appendChild(p)
+    p.textContent = `du har totalt klickat ${++clickCount} gånger`
+    let click = 0
+    let disable = false
+    p.addEventListener('click', () => {
+      if (disable) return
+      disable = true
+      p.textContent = (`du har klickat ${++click} gånger på det här p-elementet`)
+      let id = null
+      id = setInterval(rotate, 20)
+
+      let currentRotation = 0
+      function rotate () {
+        if (currentRotation === 360) {
+          disable = false
+          clearInterval(id)
+        }
+        else {
+          currentRotation += 5
+          console.log(currentRotation)
+          p.style.rotate = `${currentRotation}deg`
+        }
+      }
+    })
+    li.appendChild(p)
+    ul.appendChild(li)
+    element.parentElement.appendChild(ul)
   })
 }
 
 function domManipulation (element) {
   // kod för att visa vad du lärt dig om DOM-manipulation
   // skapa element och lägga till och ta bort
-  if (element.tagName === 'P') {
-    let click = 0
-    element.addEventListener('click', () => {
-      element.textContent = `du har klickat ${++click} gånger på det här p-elementet`
-    })
-  } else element.innerHTML = 'dom manipulation, ändra och lägg till element'
+  
+  let button = document.createElement('button')
+  button.textContent = 'Lägg till element'
+  button.onclick = domAndEvents(button)
+  element.appendChild(button)
 
-}
-
-function rotera (element) {
-  let interval = setInterval(rotation(element), 50)
-  let currentDegree = 0
-  function rotation (element) {
-    element.style.rotate = `${currentDegree++}deg`
-
-  }
 }
