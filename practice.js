@@ -18,13 +18,17 @@ export function setupPractice (element) {
 // andra moment än där funktionen heter så såklart
 function varsAndTypes(element) {
   // kod för att visa vad du lärt dig om variabler och typer
-  let varsAndTypes = 'varsAndTypes'
-  console.log(varsAndTypes, typeof(varsAndTypes))
+  let varsAndTypes = element
+  console.log(varsAndTypes)
+  let x = 50
+  let y = 50
+  console.log(x, y)
 }
 
 function operators(element) {
   // kod för att visa vad du lärt dig om operatorer
   console.log('operators === ', 1 === 1)
+  console.log('element id === #app =', element.id === 'app')
 }
 
 function controlStructures(element) {
@@ -32,21 +36,49 @@ function controlStructures(element) {
   // if och loopar
   let controlStructures = 'controlStructures'
   console.log(controlStructures, controlStructures ? 'if' : 'loopar')
+  let a = 0
+  for (let i = 0; i <= 50; i++) {
+    if (i % 2 === 0) {
+      console.log(i)
+      a++
+    }
+  }
+  console.log('antal jämna tal mellan 0 och 50 = ', a)
 }
 
 function arraysAndObjects (element) {
   // kod för att visa vad du lärt dig om arrays och objekt
-  console.log(['arrays', {and: 'objects'}])
+  let a = []
+  for (let i = 0; i <= 50; i++) {
+    if (i % 2 === 0) {
+      a.push(i)
+    }
+  }
+  console.log('jämna tal mellan 0 och 50 = ', a.length)
+  console.log('talen mellan 0 och 50 som är jämna', a)
 }
 
 function domAndEvents (element) {
   // kod för att visa vad du lärt dig om DOM och events
   // använd med html och listeners
   console.log(element, 'lyssna efter event för att ändra element')
+  let clickCount = 0
+  element.addEventListener('click', () => {
+    let p = document.createElement('p')
+    p.textContent = `du har klickat ${++clickCount} gånger`
+    domManipulation(p)
+    element.appendChild(p)
+  })
 }
 
 function domManipulation (element) {
   // kod för att visa vad du lärt dig om DOM-manipulation
   // skapa element och lägga till och ta bort
-  element.innerHTML = 'dom manipulation, ändra och lägg till element'
+  if (element.tagName === 'P') {
+    let click = 0
+    element.addEventListener('click', () => {
+      element.textContent = `du har klickat ${++click} gånger på det här p-elementet`
+    })
+  } else element.innerHTML = 'dom manipulation, ändra och lägg till element'
+
 }
