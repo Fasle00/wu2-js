@@ -82,3 +82,12 @@ function domManipulation (element) {
   } else element.innerHTML = 'dom manipulation, ändra och lägg till element'
 
 }
+
+function rotera (element) {
+  let interval = setInterval(rotation(element), 50)
+  let currentDegree = 0
+  function rotation (element) {
+    element.style.rotate = `${currentDegree++}deg`
+
+  }
+}
